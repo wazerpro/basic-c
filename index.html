@@ -5017,6 +5017,82 @@ void main(void)
 	</div><!-- /footer -->
 </div><!-- /page -->
 
+<!-- Quiz Chapter 1 -->
+<div data-role="page" id="chapter1quiz">
+	<div data-role="header" data-position="fixed" data-add-back-btn="true" >
+		<h1>Chapter 1 Quiz</h1>
+		<a href="#mypanel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-right">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	<form id="form1">
+
+	<h2>What is the output of the following code snippet?</h2>
+	<pre class="prettyprint linenums:1">
+#include &lt;stdio.h&gt;
+	
+main() 
+{
+   int x = 5;
+   
+   if(x=5)
+   {	
+       if(x=5) break;
+       printf("Hello");
+   } 
+   printf("Hi");
+}
+	</pre>
+
+	<label for="var_string"><input type="radio" name="variable" value="25" id="var_string" />Compile error</label>
+	<label for="var_join"><input type="radio" name="variable" value="0" id="var_join" />Hi</label>
+	<label for="var_info"><input type="radio" name="variable" value="0" id="var_info" />HelloHi</label>
+	<label for="var_condition"><input type="radio" name="variable" value="0" id="var_condition"/>Compiler warning</label>
+
+	<h2>What is the output of the following program?</h2>
+	<pre class="prettyprint linenums:1">
+#include &lt;stdio.h&gt;
+
+main()
+{ 
+   int a[] = {1,2}, *p = a;
+   
+   printf("%d", p[1]); 
+}
+	</pre>
+	<label for="sub_string"><input type="radio" name="sub" value="0" id="sub_string"/>1</label>
+	<label for="sub_join"><input type="radio" name="sub" value="25" id="sub_join"/>2</label>
+	<label for="sub_info"><input type="radio" name="sub" value="0" id="sub_info" />Compile error</label>
+	<label for="sub_condition"><input type="radio" name="sub" value="0" id="sub_condition" />Runtime error</label>
+
+	<h2>First operating system designed using C programming language.</h2>
+	<label for="cat_string"><input type="radio" name="con" value="0" id="cat_string" />DOS</label>
+	<label for="cat_join"><input type="radio" name="con" value="0" id="cat_join" />Windows</label>
+	<label for="cat_info"><input type="radio" name="con" value="25" id="cat_info" />Unix</label>
+	<label for="cat_condition"><input type="radio" name="con" value="0" id="cat_condition" />Mac</label>
+
+	<h2>Which of the following is used in mode string to open the file in binary mode?</h2>
+	<label for="if_string"><input type="radio" name="ifstate" value="0" id="if_string" />a</label>
+	<label for="if_join"><input type="radio" name="ifstate" value="0" id="if_join" />b</label>
+	<label for="if_info"><input type="radio" name="ifstate" value="25" id="if_info" />B</label>
+	<label for="if_condition"><input type="radio" name="ifstate"  value="0" id="if_condition" />bin</label>
+
+	<button type="submit" value="Submit">Submit</button>
+
+	</form>
+	
+	<p>Your grade is: <span id="grade">__</span></p>
+	<p id="grade2"></p>
+
+  </div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" >
+		<a href="#main" class="ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-left">Main</a>
+		<a href="#page44" class="ui-btn ui-btn-right ui-btn-inline ui-icon-arrow-r ui-btn-icon-right">Next Chapter</a>
+		<h4>&nbsp;</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
 
 
 
@@ -5027,6 +5103,38 @@ void main(void)
 	$(function() {
 		$('#mypanel').panel().enhanceWithin();
 		});
+	
+	document.getElementById("form1").onsubmit=function() {
+		   variable = parseInt(document.querySelector('input[name = "variable"]:checked').value);
+		   sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+		   con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+		   ifstate = parseInt(document.querySelector('input[name = "ifstate"]:checked').value);
+		   
+		   
+		   result = variable + sub + con + ifstate;
+		   
+		document.getElementById("grade").innerHTML = result;
+
+	 grading = [
+		   {score:0,feedback:"I don't think you studied", image: "none.jpg"},
+		   {score:25,feedback:"You need to spend more time. Try again", image: "poor.jpg"},
+		   {score:50,feedback:"I think you could do better. Try again.", image: "avg.jpg"},
+		   {score:75,feedback:"So close. Try again.", image: "above.jpg"},
+		   {score:100,feedback:"Excellent! You have proven that you've studied well!", image: "excellent.jpg"}
+		   ];
+		  
+	for(i=0; i<grading.length; i++) {
+		if(result == grading[i].score) {
+		result2 = grading[i].feedback + "<br /><img src='" + grading[i].image + "' width='300'  />";
+		  }
+		  }
+
+
+	document.getElementById("grade2").innerHTML = result2; 
+
+	return false; // required to not refresh the page; just leave this here
+	} //this ends the submit function
+
 </script>	
 
 <!-- /index2.html-mypanel -->	
@@ -5045,6 +5153,7 @@ void main(void)
 			<li><a href="#page72" style="font-size:14px">Unit 3: Introduction</a></li>
 			<li><a href="#page70" style="font-size:14px">Unit 3: Learning Objectives</a></li>
 			<li><a href="#main" data-ajax="false" style="font-size:14px">Main</a></li>
+			<li><a href="#chapter1quiz" style="font-size:14px">Chapter 1 Quiz(BETA)</a></li>
 		
 		</ul>
 	</div><!-- /panel -->
