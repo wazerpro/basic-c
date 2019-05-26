@@ -4950,10 +4950,10 @@ void main(void)
 	char author[40];
 	struct book bk[]=
 	{
-		{"C Programming", "Kanetkar", 728, 100.10}
-		{"Basic Electronics", "Afiq", 280, 140.50}
-		{"Digital Electronics", "Hakim", 200, 80.50}
-		{"Eng.Mathematics", "Hazim", 407, 70.00}
+		{"C Programming", "Kanetkar", 728, 100.10},
+		{"Basic Electronics", "Afiq", 280, 140.50},
+		{"Digital Electronics", "Hakim", 200, 80.50},
+		{"Eng.Mathematics", "Hazim", 407, 70.00},
 		{"Statistics in Eng.", "Hadi", 378, 215.99}
 	};//Initialize the array of structure
 	
@@ -4965,16 +4965,14 @@ void main(void)
 		{
 			printf("The book you're looking for:%s\n", bk[a].name);
 			printf("Author's name is:%s\n", bk[a].author);
-			printf("Number of pages is:%d\n", bk[a].name);
-			printf("The Price is:%.2f\n", bk[a].name);
+			printf("Number of pages is:%d\n", bk[a].pages);
+			printf("The Price is:%.2f\n", bk[a].price);
 		}
 	}
 	if(data == 0)
 		printf("Sorry, the book is not in the database\n");
 }
 </pre></div>
-	<p>Do it yourself:</p>
-	<iframe src="https://www.onlinegdb.com/online_c_compiler" height="100%" width="100%"></iframe>
       <p>&nbsp;</p>
       <h3>&nbsp;</h3>
 <ul>
@@ -5015,6 +5013,25 @@ void main(void)
 	<div data-role="footer" data-position="fixed" >
 		<a href="#page131" class="ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-left">Previous</a>
 		<a href="#page133" class="ui-btn ui-btn-right ui-btn-inline ui-icon-arrow-r ui-btn-icon-right">Next</a>
+		<h4>&nbsp;</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+	
+	
+<!-- Compiler -->
+<div data-role="page" id="compiler">
+	<div data-role="header" data-position="fixed" data-add-back-btn="true" >
+		<h1>ONLINE COMPILER</h1>
+		<a href="#mypanel" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-right">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+<iframe src="https://www.onlinegdb.com/online_c_compiler" height="auto" width="100%"></iframe>
+  </div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" >
+		<a href="#main" class="ui-btn ui-btn-inline ui-icon-arrow-l ui-btn-icon-left">Main</a>
+		<a href="#page1" class="ui-btn ui-btn-right ui-btn-inline ui-icon-arrow-r ui-btn-icon-right">Chapter 1</a>
 		<h4>&nbsp;</h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
@@ -5156,6 +5173,7 @@ main()
 			<li><a href="#page70" style="font-size:14px">Unit 3: Learning Objectives</a></li>
 			<li><a href="#main" data-ajax="false" style="font-size:14px">Main</a></li>
 			<li><a href="#chapter1quiz" style="font-size:14px">Chapter 1 Quiz(BETA)</a></li>
+			<li><a href="#compiler" style="font-size:14px">Online Compiler(Online Only)</a></li>
 		
 		</ul>
 	</div><!-- /panel -->
